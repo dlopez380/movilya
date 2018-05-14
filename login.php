@@ -12,7 +12,7 @@
 					header('Location: postlogeo.html');
 				}
 			}
-
+			
 ?>
 
 <html>
