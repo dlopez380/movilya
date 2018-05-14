@@ -213,7 +213,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt7MA7_ileeh2KYYM-4VEvgen
       </div>
 
 
-  </body>
+  
   
     <div>
   3. El lugar de entrega sera en el parqueadero... 
@@ -227,6 +227,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt7MA7_ileeh2KYYM-4VEvgen
 
     <input type="submit" name="valores" value="Hacer reserva">
   </form>
-
+  </body>
 
 </html>
