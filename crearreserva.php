@@ -205,7 +205,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt7MA7_ileeh2KYYM-4VEvgen
             <option value="bicicleta">Bicicleta</option>
           </select>
 <div>
-        2. Quiero alquilar un vehiculo del parqueado... 
+        2. Quiero alquilar un vehiculo del parqueadero... 
         <input type="text" name="alquilarparqueadero">
         </div>
         

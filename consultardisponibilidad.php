@@ -31,9 +31,9 @@ if(isset($_POST["consultapar"])){
 
         <form action="parqueaderoconsultado.php" method="POST">
             Inserte el numero de parquedero al que quiere consultar disponibilidad:
-            <input type="text" name="parqueadero">
+            <input type="text" name="idparqueadero">
             <div>
-                <input type="submit" value="Checkear">
+                <input type="submit" name="consultaparque"value="Checkear">
             </div>
         </form>
         <table>
