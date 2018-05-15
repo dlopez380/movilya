@@ -15,6 +15,8 @@
     $log = mysql_query("INSERT INTO reservas (vehiculo,parqueadero,lugarentrega,reservadopor) values 
       ('$vehiculo','$alquilar','$lugar','$reservadopor')");
 
+    $log2 = mysql_query("UPDATE parqueaderos SET '$vehiculo' = '$vehiculo' - 1 WHERE id = '$alquilar'");
+
 
     header('Location: postlogeo.html');
   } 
@@ -200,9 +202,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt7MA7_ileeh2KYYM-4VEvgen
         <form action="crearreserva.php" method="post">
           1. Quiero alquilar un vehiculo... 
           <select name="vehiculo">
-            <option value="carro">Carro</option> 
-            <option value="moto">Moto</option> 
-            <option value="bicicleta">Bicicleta</option>
+            <option value="carros">Carro</option> 
+            <option value="motos">Moto</option> 
+            <option value="bicicletas">Bicicleta</option>
           </select>
 <div>
         2. Quiero alquilar un vehiculo del parqueadero... 
