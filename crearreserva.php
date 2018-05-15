@@ -15,7 +15,9 @@
     $log = mysql_query("INSERT INTO reservas (vehiculo,parqueadero,lugarentrega,reservadopor) values 
       ('$vehiculo','$alquilar','$lugar','$reservadopor')");
 
-    $log2 = mysql_query("UPDATE parqueaderos SET '$vehiculo' = '$vehiculo' - 1 WHERE id = '$alquilar'");
+    $log2 = mysql_query("UPDATE parqueaderos SET $vehiculo = $vehiculo - 1 WHERE id = '$alquilar'");
+
+    $log2 = mysql_query("UPDATE parqueaderos SET $vehiculo = $vehiculo + 1 WHERE id = '$lugar'");
 
 
     header('Location: postlogeo.html');
