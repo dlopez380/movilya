@@ -7,8 +7,9 @@
 	if(isset($_POST["registrarse"])){
 		$usuario=$_POST["user"];
 		$pass=$_POST["pass"];
+		$tipousuario=$_POST["tipousuario"];
 
-		$log = mysql_query("INSERT INTO usuarios (usuario,pass) values ('$usuario','$pass')");
+		$log = mysql_query("INSERT INTO usuarios (usuario,pass,tipousuario) values ('$usuario','$pass','$tipousuario')");
 
 		header('Location: index.html');
 	}	
@@ -22,7 +23,18 @@
 <h3>Registrarse: introduzca sus datos</h3>
 
 Usuario:<input type="text" name="user">
-Contaseña:<input type="text" name="pass">
+<div>
+	Contaseña:<input type="text" name="pass">
+</div>
+
+		<div> 
+		  1. Que tipo de usuario es? 
+          <select name="tipousuario">
+            <option value="cliente">Cliente</option> 
+            <option value="empleado">Empleado</option> 
+          </select>
+		</div>	
+
 <input type="submit" name="registrarse" value="Registrarse">
 
 </form>
