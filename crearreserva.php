@@ -9,11 +9,12 @@
   if(isset($_POST["valores"])){
     $vehiculo=$_POST["vehiculo"];
     $alquilar=$_POST["alquilarparqueadero"];
+    $minutos=$_POST["minutos"];
     $lugar=$_POST["lugarentrega"];
     $reservadopor=$_POST["reservadopor"];
 
-    $log = mysql_query("INSERT INTO reservas (vehiculo,parqueadero,lugarentrega,reservadopor) values 
-      ('$vehiculo','$alquilar','$lugar','$reservadopor')");
+    $log = mysql_query("INSERT INTO reservas (vehiculo,parqueadero,minutos,lugarentrega,reservadopor) values 
+      ('$vehiculo','$alquilar','$minutos','$lugar','$reservadopor')");
 
     $log2 = mysql_query("UPDATE parqueaderos SET $vehiculo = $vehiculo - 1 WHERE id = '$alquilar'");
 
@@ -216,16 +217,20 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt7MA7_ileeh2KYYM-4VEvgen
 
       </div>
 
-
+    <div>
+  3. Quiero alquilar el vehiculo por... 
+  <input type="text" name="minutos">
+  minutos
+    </div>
   
   
     <div>
-  3. El lugar de entrega sera en el parqueadero... 
+  4. El lugar de entrega sera en el parqueadero... 
   <input type="text" name="lugarentrega">
     </div>
 
   <div>
-    4. El usuario que reservo el vehiculo es... 
+    5. El usuario que reservo el vehiculo es... 
     <input type="text" name="reservadopor">
   </div>
 

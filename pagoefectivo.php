@@ -25,7 +25,7 @@ if(isset($_POST["subirefectivo"])){
 <body>
 
 <h2>MovilYa</h2>
-<h3>Empleado: confirmar alquiler (tarjeta inteligente)</h3>
+<h3>Empleado: confirmar alquiler (efectivo)</h3>
 
     <form action="pagoefectivo.php" method="post">
         <div>

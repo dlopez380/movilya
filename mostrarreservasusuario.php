@@ -10,7 +10,6 @@ if(isset($_POST["submit2"])){
 
     $log3 = mysql_query("INSERT INTO metodopago (reservapagada,metodopago) values ('$reservaconfirmar','$metodopago')");
 
-    $log4 = mysql_query
 
     if($metodopago='tarjetacredito'){
         header('Location: pagotarjetacredito.php');
@@ -18,7 +17,9 @@ if(isset($_POST["submit2"])){
     
     if($metodopago='tarjetainteligente'){
         header('Location: pagotarjetainteligente.php');
-    }else{
+    }
+    
+    if($metodopago='efectivo'){
         header('Location: pagoefectivo.php');
     }
 }
