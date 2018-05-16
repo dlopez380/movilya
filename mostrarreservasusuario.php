@@ -1,3 +1,30 @@
+<?php
+
+$con=mysql_connect("localhost", "root", "");
+
+$mydb=mysql_select_db("software2");
+
+if(isset($_POST["submit2"])){
+    $reservaconfirmar=$_POST["reservaconfirmar"];
+    $metodopago=$_POST["metodopago"];
+
+    $log3 = mysql_query("INSERT INTO metodopago (reservapagada,metodopago) values ('$reservaconfirmar','$metodopago')");
+
+    $log4 = mysql_query
+
+    if($metodopago='tarjetacredito'){
+        header('Location: pagotarjetacredito.php');
+    }
+    
+    if($metodopago='tarjetainteligente'){
+        header('Location: pagotarjetainteligente.php');
+    }else{
+        header('Location: pagoefectivo.php');
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,19 +40,20 @@
 
     <form action="mostrarreservasusuario.php" method="post">
         Que numero de reserva quiere confirmar?
-        <input type="text" name="reservaaconfirmar">
+        <input type="text" name="reservaconfirmar">
         </br>
         Con que metodo de pago el cliente va a completar el alquiler?
-        <input type="text" name="metodopago">
+        <select name="metodopago">
+            <option value="tarjetacredito">Tarjeta de credito</option> 
+            <option value="tarjetainteligente">Tarjeta inteligente</option>
+            <option value="efectivo">Efectivo</option> 
+        </select>       
+        </br>
+        <input type="submit" name="submit2" value="Proceder">
 
     </form>
         
     <?php
-
-        $con=mysql_connect("localhost", "root", "");
-
-        $mydb=mysql_select_db("software2");
-
         if(isset($_POST["submit"])){
             $usuariocons=$_POST["usuariocons"];
 
