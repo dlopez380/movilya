@@ -1,18 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <title>MóvilYa</title>
 </head>
-<body>
-    <h2>MovilYa</h2>
-    <h3>Empleado: interfaz principal</h3>
 
-    <ul id="menu">
-            <li><a href="confirmartranspago.php"><span><span>Confirmacion de pago para entrega de vehiculo</span></span></a></li>
-    </ul>
-    
+<body>
+    <main class="hero is-vertical is-bold">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="#">
+                            <img class="logo" src="static/marca/1x/logo_normal.png" alt="Logo"> MóvilYa
+                        </a>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <!--<li>
+                                        <a href="./registrarse.php">Registrarse</a>
+                                    </li>-->
+                                </ul>
+                                <span class="navbar-item">
+                                    <a class="button is-danger" href="./login.php">
+                                        <span title="Salir">Salir</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <img src="./static/marca/2x/logo_normal@2x.png" alt="" srcset="">
+
+                <a href="./confirmartranspago.php" class="button is-large is-info">Confirmar ingreso de vehículo</a>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

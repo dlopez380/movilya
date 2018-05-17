@@ -1,1 +1,4 @@
 @import "./bulma.css";
+.column .box {
+  height: 100%;
+}
