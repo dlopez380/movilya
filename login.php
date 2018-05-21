@@ -3,9 +3,15 @@
 
   $mydb = mysql_select_db("software2");
 
+
+  session_start(); 
+  session_unset();
+  
   if (isset($_POST[ "login" ])) {
     $usuario = $_POST[ "user" ];
     $pass = $_POST[ "pass" ];
+
+    
 
     $log = mysql_query("SELECT * FROM usuarios WHERE usuario='$usuario' AND pass='$pass'");
     /*$log2 = mysql_query("SELECT * FROM usuarios WHERE (usuario='$usuario' AND pass='$pass' AND tipousuario=empleado");
@@ -18,12 +24,14 @@
 header('Location: postlogeoempleado.html');*/
         header('Location: postlogeoempleado.html');
       } else {
+        $_SESSION["loginusuario"] = $usuario;
         header('Location: postlogeo.html');
       }
     }
   }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es-CO">
 
