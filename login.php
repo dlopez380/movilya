@@ -23,9 +23,11 @@
         /*if (mysql_num_rows($log2)>0){
 header('Location: postlogeoempleado.html');*/
         header('Location: postlogeoempleado.html');
-      } else {
+      } elseif($row[ 'tipousuario' ] == 'cliente') {
         $_SESSION["loginusuario"] = $usuario;
         header('Location: postlogeo.html');
+      }else{
+        header('Location: postlogeoadmin.html');
       }
     }
   }

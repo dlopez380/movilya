@@ -1,6 +1,6 @@
 <?php
 
-  $con = mysql_connect("localhost", "root", "bpi01bFDW34A");
+  $con = mysql_connect("localhost", "movilya", "Movilya2018");
 
   $mydb = mysql_select_db("software2");
 
@@ -60,6 +60,7 @@
                                     <select name="tipousuario">
                                         <option value="cliente">Soy un usuario</option>
                                         <option value="empleado">Soy un empleado</option>
+                                        <option value="admin">Soy un administrador</option>
                                     </select>
                                 </div>
                                 <div class="icon is-small is-left">
