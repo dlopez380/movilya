@@ -1,0 +1,22 @@
+{
+  "name": "movilya",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arendon1/movilya.git"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arendon1/movilya/issues"
+  },
+  "homepage": "https://github.com/arendon1/movilya#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/googlemaps": "^3.30.8"
+  }
+}
