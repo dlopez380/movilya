@@ -45,9 +45,11 @@ header('Location: postlogeoempleado.html');*/
                 <h3 class="title">Ingresar al sistema</h3>
                 <p class="subtitle">Debes ingresar antes de poder usar nuestros servicios.</p>
                 <div class="box">
-                    <figure class="avatar">
-                        <img src="./img/marca/SVG/logo_normal.svg" width="189" height="189">
-                    </figure>
+                    <a href="index.html" target="_self">
+                        <figure class="avatar">
+                            <img src="./img/marca/SVG/logo_normal.svg" width="189" height="189">
+                        </figure>
+                    </a>
                     <form action="login.php" method="post">
                         <div class="field">
                             <div class="control">

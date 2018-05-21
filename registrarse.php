@@ -2,17 +2,17 @@
 
   $con = mysql_connect("localhost", "root", "bpi01bFDW34A");
 
-	$mydb=mysql_select_db("software2");
+  $mydb = mysql_select_db("software2");
 
-	if(isset($_POST["registrarse"])){
-		$usuario=$_POST["user"];
-		$pass=$_POST["pass"];
-		$tipousuario=$_POST["tipousuario"];
+  if (isset($_POST[ "registrarse" ])) {
+    $usuario = $_POST[ "user" ];
+    $pass = $_POST[ "pass" ];
+    $tipousuario = $_POST[ "tipousuario" ];
 
-		$log = mysql_query("INSERT INTO usuarios (usuario,pass,tipousuario) values ('$usuario','$pass','$tipousuario')");
+    $log = mysql_query("INSERT INTO usuarios (usuario,pass,tipousuario) values ('$usuario','$pass','$tipousuario')");
 
-		header('Location: index.html');
-	}	
+    header('Location: index.html');
+  }
 ?>
 
 <html lang="es-CO">
@@ -33,9 +33,11 @@
                 <h3 class="title">¡Es un placer tenerte aquí con nosotros!</h3>
                 <p class="subtitle">Completa tus datos y comienza a moverte.</p>
                 <div class="box">
-                    <figure class="avatar">
-                        <img src="./img/marca/SVG/logo_normal.svg" width="189" height="189">
-                    </figure>
+                    <a href="index.html" target="_self">
+                        <figure class="avatar">
+                            <img src="./img/marca/SVG/logo_normal.svg" width="189" height="189">
+                        </figure>
+                    </a>
                     <form action="registrarse.php" method="post">
 
                         <div class="field">
