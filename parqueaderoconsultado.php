@@ -14,7 +14,7 @@
     <div>
     <?php
 
-        $con=mysql_connect("localhost", "root", "");
+        $con=mysql_connect("localhost", "movilya", "Movilya2018");
 
         $mydb=mysql_select_db("software2");
 

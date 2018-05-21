@@ -1,17 +1,15 @@
-
-
 <?php
 
-  $con=mysql_connect("localhost", "root", "");
+  $con = mysql_connect("localhost", "movilya", "Movilya2018");
 
-  $mydb=mysql_select_db("software2");
+  $mydb = mysql_select_db("software2");
 
-  if(isset($_POST["valores"])){
-    $vehiculo=$_POST["vehiculo"];
-    $alquilar=$_POST["alquilarparqueadero"];
-    $minutos=$_POST["minutos"];
-    $lugar=$_POST["lugarentrega"];
-    $reservadopor=$_POST["reservadopor"];
+  if (isset($_POST[ "valores" ])) {
+    $vehiculo = $_POST[ "vehiculo" ];
+    $alquilar = $_POST[ "alquilarparqueadero" ];
+    $minutos = $_POST[ "minutos" ];
+    $lugar = $_POST[ "lugarentrega" ];
+    $reservadopor = $_POST[ "reservadopor" ];
 
     $log = mysql_query("INSERT INTO reservas (vehiculo,parqueadero,minutos,lugarentrega,reservadopor) values 
       ('$vehiculo','$alquilar','$minutos','$lugar','$reservadopor')");
@@ -22,220 +20,194 @@
 
 
     header('Location: postlogeo.html');
-  } 
+  }
 
 ?>
-
 <!DOCTYPE html>
-<html>
-
-  
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Simple markers</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 45%;
-        width: 35%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    
-
-
-
-      <div>
-        <h2>MovilYa</h2> 
-        <h3>Usuario: crear reserva</h3>
-      </div>
-      <div id="map"></div>
-<script>
-
-  function initMap() {
-    var myLatLng = {lat: -25.363, lng: 131.044};
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: myLatLng
-    });
-
-    var pos = {lat: 7.116476, lng:-73.105437};
-    var bucaramanga1 = {lat: 7.1160507, lng: -73.1114196};
-    var bucaramanga2 = {lat: 7.1153437, lng: -73.105408};
-    var bucaramanga3 = {lat: 7.1161588, lng: -73.1090731};
-    var bucaramanga4 = {lat: 7.1143302, lng: -73.1101437};
-    var bucaramanga5 = {lat: 7.1143853, lng: -73.1099519};
-    var florida1 = {lat: 7.0685395, lng: -73.0974235};
-    var florida2 = {lat: 7.0698939, lng: -73.1008341};
-    var giron1 = {lat: 7.0669264, lng: -73.1646974};
-    var giron2 = {lat: 7.0684089, lng: -73.1686528};
-    var giron3 = {lat: 7.0694204, lng: -73.1725474};
-    var giron4 = {lat: 7.0795938, lng: -73.1610201};
-    var giron5 = {lat: 7.0683146, lng: -73.1692983};
-    var piedecuesta1 = {lat: 6.9859824, lng: -73.0523676};
-    var piedecuesta2 = {lat: 6.9855006, lng: -73.0506108};
-    var piedecuesta3 = {lat: 6.9862329, lng: -73.0501427};
-    var piedecuesta4 = {lat: 6.9899826, lng: -73.0540494};
-    var piedecuesta5 = {lat: 6.9855743, lng: -73.0508226};
-
-
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: pos
-    });
-
-    var bucaramanga1 = new google.maps.Marker({
-      position: bucaramanga1,
-      map: map,
-      title: 'Parqueadero 1'
-    });
-
-    var bucaramanga2 = new google.maps.Marker({
-      position: bucaramanga2,
-      map: map,
-      title: 'Parqueadero 2'
-    });
-
-    var bucaramanga3 = new google.maps.Marker({
-      position: bucaramanga3,
-      map: map,
-      title: 'Parqueadero 3'
-    });
-
-    var bucaramanga4 = new google.maps.Marker({
-      position: bucaramanga4,
-      map: map,
-      title: 'Parqueadero 4'
-    });
-
-    var bucaramanga5 = new google.maps.Marker({
-      position: bucaramanga5,
-      map: map,
-      title: 'Parqueadero 5'
-    });
-
-    var florida1 = new google.maps.Marker({
-      position: florida1,
-      map: map,
-      title: 'Parqueadero 6'
-    });
-
-    var florida2 = new google.maps.Marker({
-      position: florida2,
-      map: map,
-      title: 'Parqueadero 7'
-    });
-
-    var giron1 = new google.maps.Marker({
-      position: giron1,
-      map: map,
-      title: 'Parqueadero 8'
-    });
-
-    var giron2 = new google.maps.Marker({
-      position: giron2,
-      map: map,
-      title: 'Parqueadero 9'
-    });
-
-    var giron3 = new google.maps.Marker({
-      position: giron3,
-      map: map,
-      title: 'Parqueadero 10'
-    });
-
-    var giron4 = new google.maps.Marker({
-      position: giron4,
-      map: map,
-      title: 'Parqueadero 11'
-    });
-
-    var giron5 = new google.maps.Marker({
-      position: giron5,
-      map: map,
-      title: 'Parqueadero 12'
-    });
-
-    var piedecuesta1 = new google.maps.Marker({
-      position: piedecuesta1,
-      map: map,
-      title: 'Parqueadero 13'
-    });
-
-    var piedecuesta2 = new google.maps.Marker({
-      position: piedecuesta2,
-      map: map,
-      title: 'Parqueadero 14'
-    });
-
-    var piedecuesta3 = new google.maps.Marker({
-      position: piedecuesta3,
-      map: map,
-      title: 'Parqueadero 15'
-    });
-
-    var piedecuesta4 = new google.maps.Marker({
-      position: piedecuesta4,
-      map: map,
-      title: 'Parqueadero 16'
-    });
-
-    var piedecuesta5 = new google.maps.Marker({
-      position: piedecuesta5,
-      map: map,
-      title: 'Parqueadero 17'
-    });
-  }
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt7MA7_ileeh2KYYM-4VEvgenTRChEENI&callback=initMap">
-</script>
-
-        <form action="crearreserva.php" method="post">
-          1. Quiero alquilar un vehiculo... 
-          <select name="vehiculo">
-            <option value="carros">Carro</option> 
-            <option value="motos">Moto</option> 
-            <option value="bicicletas">Bicicleta</option>
-          </select>
-<div>
-        2. Quiero alquilar un vehiculo del parqueadero... 
-        <input type="text" name="alquilarparqueadero">
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Móvil Ya - Crear una reserva</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script>
+  </script>
+  <script src="./js/sweetalert2.all.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0o0TyvrHx31FywTtLbqNkBigvfrDFTyA&callback=iniciarMapa"
+  >
+  </script>
+</head>
+<body>
+<section class="hero is-fullwidth">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./index.html">
+            <img class="logo" src="img/marca/1x/logo_normal.png" alt="Logo"> MóvilYa
+          </a>
         </div>
-        
-
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="tabs is-right">
+              <span class="navbar-item">
+                <a class="button is-danger" href="./index.html">
+                  <span title="Salir">Salir</span>
+                  <span class="icon is-small">
+                    <i class="mdi mdi-close"></i>
+                  </span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-
-    <div>
-  3. Quiero alquilar el vehiculo por... 
-  <input type="text" name="minutos">
-  minutos
-    </div>
-  
-  
-    <div>
-  4. El lugar de entrega sera en el parqueadero... 
-  <input type="text" name="lugarentrega">
-    </div>
-
-  <div>
-    5. El usuario que reservo el vehiculo es... 
-    <input type="text" name="reservadopor">
+    </nav>
   </div>
+  <div class="hero-body">
+    <div class="columns">
+      <div class="column is-centered">
+        <div id="mapa"></div>
+      </div>
+      <div class="column is-12-mobile is-6-tablet is-4-desktop">
+        <div class="box crear-reserva">
+          <div class="columns">
+            <div class="column">
+              <h1 class="title">
+                <div class="icon is-large">
+                  <i class="mdi mdi-plus-circle"></i>
+                </div>
+                Reservar un vehículo
+              </h1>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <h2>Quiero alquilar...</h2>
+              <div class="field">
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="vehiculo" value="carros">
+                    <span class="icon"><i class="mdi mdi-car"></i></span>
+                    Un carro
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="vehiculo" value="motos">
+                    <span class="icon"><i class="mdi mdi-motorbike"></i></span>
+                    Una moto
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="vehiculo" value="bicicletas">
+                    <span class="icon"><i class="mdi mdi-bike"></i></span>
+                    Una bicicleta
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column is-6">
+              <div class="field">
 
-    <input type="submit" name="valores" value="Hacer reserva">
-  </form>
-  </body>
+                <div class="control">
+                  <label class="label">Lo voy a recoger en</label>
+                  <div class="select">
+                    <select name="alquilarparqueadero"">
+                    <option>Escoge uno...</option>
+                    <option value="1">Galerías</option>
+                    <option value="2">Gratamira</option>
+                    <option value="3">Registraduría</option>
+                    <option value="4">Parking Car</option>
+                    <option value="5">QuicklyParking</option>
+                    <option value="6">Bellavista</option>
+                    <option value="7">Helechales</option>
+                    <option value="8">Lenguerke</option>
+                    <option value="9">Basílica</option>
+                    <option value="10">San Carlos</option>
+                    <option value="11">El Bueno</option>
+                    <option value="12"> Gran Monarca</option>
+                    <option value="13">La Sexta</option>
+                    <option value="14">Génesis</option>
+                    <option value="15">Central</option>
+                    <option value="16">Trapiches</option>
+                    <option value="17">Housecar57</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="field">
+                <div class="control">
+                  <label class="label" for="minutos">Por
+                    <input name="minutos" class="input" type="number" min="15" step="15">
+                    <small class="has-text-right">minutos</small>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <div class="control">
+                  <label class="label" for="lugarentrega">Entregaré en:
+                    <div class="select">
+                      <select name="lugarentrega">
+                        <option>Escoge uno...</option>
+                        <option value="1">Galerías</option>
+                        <option value="2">Gratamira</option>
+                        <option value="3">Registraduría</option>
+                        <option value="4">Parking Car</option>
+                        <option value="5">QuicklyParking</option>
+                        <option value="6">Bellavista</option>
+                        <option value="7">Helechales</option>
+                        <option value="8">Lenguerke</option>
+                        <option value="9">Basílica</option>
+                        <option value="10">San Carlos</option>
+                        <option value="11">El Bueno</option>
+                        <option value="12"> Gran Monarca</option>
+                        <option value="13">La Sexta</option>
+                        <option value="14">Génesis</option>
+                        <option value="15">Central</option>
+                        <option value="16">Trapiches</option>
+                        <option value="17">Housecar57</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <div class="control">
+                  <label class="label">
+                    Confirma tu nombre de usuario:
+                    <input type="text" class="input" name="reservadopor">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <button type="submit" class="button is-primary is-large is-fullwidth">
+                Crear mi reserva
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+</body>
 </html>
