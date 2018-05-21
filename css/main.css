@@ -1,4 +1,10 @@
 @import "./bulma.css";
+@import "./materialdesignicons.css";
+
+body > * {
+    transition: all, 600ms;
+}
+
 .column .box {
-  height: 100%;
+    height: 100%;
 }
