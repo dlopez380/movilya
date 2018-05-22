@@ -4,26 +4,22 @@ $con = mysql_connect("localhost", "movilya", "Movilya2018");
 
 $mydb = mysql_select_db("software2");
 
-if (isset($_POST[ "valores" ])) {
+if (isset($_POST[ "vehiculomant" ])) {
+    $vehiculoenviar = $_POST[ "vehiculoenviar" ];
     $vehiculoparqueadero = $_POST[ "vehiculoparqueadero" ];
-    $vehiculo = $_POST[ "vehiculo" ];
-    
-    $minutos = $_POST[ "minutos" ];
-    $lugar = $_POST[ "lugarentrega" ];
-    $reservadopor = $_SESSION[ "loginusuario" ];
-    //$_SESSION['loginusuario'] = $_POST['reservadopor'];
 
-    //$reservadopor = $_SESSION[ "loginusuario" ];    
+    $log1 = mysql_query("SELECT $vehiculoenviar FROM parametrosmantenimiento WHERE id = 1");
 
-    $log1 = mysql_query("SELECT ");
+    while($result=mysql_fetch_array($log1, MYSQL_ASSOC)){
+         $result[$vehiculoenviar];
+    }
 
-    $log = mysql_query("INSERT INTO reservas (vehiculo,parqueadero,minutos,lugarentrega,reservadopor) values 
-        ('$vehiculo','$alquilar','$minutos','$lugar','$reservadopor')");
+    $log2 = mysql_query("UPDATE parqueaderos SET $vehiculoenviar = $vehiculoenviar - 1 WHERE id = '$vehiculoparqueadero'");
+}
 
-    /*$log = mysql_query("INSERT INTO reservas (vehiculo,parqueadero,minutos,lugarentrega,reservadopor) values 
-        ('$vehiculo','$alquilar','$minutos','$lugar','$reservadopor')");*/
+?>
 
-    $log2 = mysql_query("UPDATE parqueaderos SET $vehiculo = $vehiculo - 1 WHERE id = '$alquilar'");
+<?php
 
 ?>
 
@@ -40,16 +36,8 @@ if (isset($_POST[ "valores" ])) {
     <h3>Empleado: reportar entrada de vehículo a mantenimiento</h3>
     </br>
     <form>
-        1. Seleccione el parqueadero del vehículo que quiere mandar a mantenimiento... 
-        <input type="text" name="vehiculoparqueadero">
         </br>
-        2. Seleccione el tipo de vehículo... 
-        <select name="vehiculo">
-            <option value="bicicleta">Bicicleta</option>
-            <option value="carro">Carro</option>
-            <option value="moto">Moto</option>
-        </select>
-        3. El vehículo tiene <?php ?>
+        2. El vehículo tiene <?php echo $result['$vehiculo'] ?>
     </form>
     
 </body>
