@@ -1,5 +1,6 @@
 <?php
-  $con = mysql_connect("localhost", "movilya", "Movilya2018");
+  $con = mysql_connect("localhost", "root", ""); 
+                        /* "localhost", "nombre de la db", "pass de la db" */
 
   $mydb = mysql_select_db("software2");
 
